@@ -57,11 +57,6 @@ class MyFrame extends JFrame {
 		this.setVisible(true);
 	}
 	
-	@Override
-	public void paintComponents(Graphics g) {
-		// TODO Auto-generated method stub
-		super.paintComponents(g);
-	}
 
 }
 
