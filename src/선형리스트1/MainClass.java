@@ -1,4 +1,5 @@
 package 선형리스트1;
+
 //https://blog.naver.com/abcccccd/220489801495
 import java.util.Arrays;
 
@@ -20,8 +21,8 @@ public class MainClass {
 	private void insertValue(int index, int value) {
 		// TODO Auto-generated method stub
 
-		for (int i = 0; i < count - 1 - index + 1; i++) {
-			this.array[count - i] = array[count - 1 - i];
+		for (int i = this.array.length - 1; i > index; i--) {
+			this.array[i] = this.array[i - 1];
 		}
 
 		this.array[index] = value;
@@ -32,19 +33,13 @@ public class MainClass {
 
 	}
 
-	public void deleteIndex(int position) {
+	public void deleteIndex(int index) {
 		// 1. 삭제할 원소를 0으로 설정
-		array[position] = 0;
-		// 2. 비어있는 원소의 뒤에서 끝까지 원소를 한칸씩 당긴다.
-		// 앞에서 부터 이동시켜 준다.
-
-		for (int i = 0; i < count - position - 1; i++) {
-			array[position + i] = array[position + i + 1];
+		this.array[index] = 0;
+		for(int i = index; i < this.array.length - 1; i++) {
+			this.array[i] = this.array[i + 1];
 		}
-
-		// array[position] = array[position+1]; //ex)3번째에 있는걸 2번에 넣어줘야하잖어
-		// array[position] = array[position+2];
-		// array[count -2] = array[count -1]; //5개라고 하면5번째 있는걸 4번째 넣는게 끝
+		this.array[this.array.length - 1] = 0;
 		this.showArray();
 	}
 
