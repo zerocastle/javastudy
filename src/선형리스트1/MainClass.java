@@ -26,7 +26,6 @@ public class MainClass {
 		}
 
 		this.array[index] = value;
-
 		count++;
 		System.out.println("이동 횟수는 : " + (count - (index + 1)));
 		this.showArray();
@@ -36,11 +35,13 @@ public class MainClass {
 	public void deleteIndex(int index) {
 		// 1. 삭제할 원소를 0으로 설정
 		this.array[index] = 0;
-		for(int i = index; i < this.array.length - 1; i++) {
+		for (int i = index; i < this.array.length - 1; i++) {
 			this.array[i] = this.array[i + 1];
 		}
+		count--;
 		this.array[this.array.length - 1] = 0;
 		this.showArray();
+		System.out.println("이동횟수는 : " + (count - index));
 	}
 
 	private void showArray() {
@@ -52,7 +53,8 @@ public class MainClass {
 	public static void main(String[] args) {
 		MainClass obj = new MainClass();
 		obj.insertValue(2, 70);
-		obj.deleteIndex(1);
+		obj.deleteIndex(2);
+		obj.deleteIndex(3);
 	}
 
 }
