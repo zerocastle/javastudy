@@ -1,17 +1,19 @@
 package ys.Thread2;
 
+
+
 class Counter {
 	private int value = 0;
 
-	public void increment() {
+	public synchronized void increment() {
 		value++;
 	}
 
-	public void decrement() {
+	public synchronized void decrement() {
 		value--;
 	}
 
-	public void printCount() {
+	public synchronized void printCount() {
 		// TODO Auto-generated method stub
 		System.out.println(value);
 
@@ -40,9 +42,9 @@ public class MainClass {
 	public static void main(String[] args) {
 		Counter c = new Counter();
 		MyTread t1 = new MyTread(c);
-//		MyTread t2 = new MyTread(c);
+		MyTread t2 = new MyTread(c);
 		t1.start();
-//		t2.start();
+		t2.start();
 	}
 
 }
