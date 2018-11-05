@@ -65,12 +65,13 @@ class Buffer {
 	}
 
 	public void print() {
+		System.out.println();
 		System.out.print("¹öÆÛ : ");
 		for (int i = 0; i < 3; i++) {
 			if (i < pos) {
 				System.out.printf(dataList.get(i) + " ");
 			} else {
-				System.out.printf(" ");
+				System.out.print(" ");
 			}
 		}
 	}
@@ -114,6 +115,11 @@ class Consumer implements Runnable {
 				Thread.sleep((long) (Math.random() * 100));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
+				
+				
+				
+				
+				
 				e.printStackTrace();
 			}
 		}
