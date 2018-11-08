@@ -2,17 +2,18 @@ package ys.imageFrame;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MyImageFrame extends JFrame {
-	
+
 	BufferedImage img = null;
-	
 	public MyImageFrame() {
 		// TODO Auto-generated constructor stub
 		this.setTitle("image load Test");
